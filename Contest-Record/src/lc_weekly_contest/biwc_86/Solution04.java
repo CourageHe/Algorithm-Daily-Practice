@@ -5,7 +5,7 @@ package lc_weekly_contest.biwc_86;
  * @Author: CourageHe
  * @Date: 2023/02/18 22:34
  */
-public class Solution04 {
+class Solution04 {
     public long[] handleQuery(int[] nums1, int[] nums2, int[][] queries) {
         //计算返回数组长度
         int ansLen = 0;

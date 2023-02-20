@@ -7,14 +7,11 @@ import java.util.Arrays;
  * @Author: CourageHe
  * @Date: 2023/02/18 22:34
  */
-public class Solution02 {
+class Solution02 {
     public int minimizeSum(int[] nums) {
         if(nums.length == 3) return 0;
         Arrays.sort(nums);
         int len = nums.length;
-        // nums[len-1] = nums[len-2];//缩小最大值
-        // nums[0] = nums[1];//增大最小值
-        // int max =nums[len-1] - nums[0];
         int max1 =nums[len-2] - nums[1];
 
         int max2= nums[len-1]-nums[2];

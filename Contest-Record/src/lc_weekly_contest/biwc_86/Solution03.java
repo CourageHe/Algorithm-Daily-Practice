@@ -1,21 +1,22 @@
 package lc_weekly_contest.biwc_86;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @Description: https://leetcode.cn/contest/biweekly-contest-98/problems/minimum-impossible-or/
  * @Author: CourageHe
  * @Date: 2023/02/18 22:34
  */
-public class Solution03 {
+class Solution03 {
     public int minImpossibleOR(int[] nums) {
+        //hash表，数组去重，快速定位，
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            set.add(nums[i]);
+        }
         for(int i =1;i<Integer.MAX_VALUE;i <<=1){
-            boolean flag = false;
-            for (int m = 0; m < nums.length; m++) {
-                if (i == nums[m]) {
-                    flag = true;
-                    break;
-                }
-            }
-            if(!flag) return i;
+            if(!set.contains(i)) return i;
         }
         return -1;
     }

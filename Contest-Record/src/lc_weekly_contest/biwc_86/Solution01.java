@@ -5,23 +5,19 @@ package lc_weekly_contest.biwc_86;
  * @Author: CourageHe
  * @Date: 2023/02/18 22:34
  */
-public class Solution01 {
+class Solution01 {
+    //暴力枚举
     public int minMaxDifference(int num) {
-        int ans = 1;
-        String numStr = num+"";
+        String s = String.valueOf(num);
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         for(int i = 0;i<10;i++){
-            String temp = numStr.replace(i+"",9+"");
-            int digit = Integer.parseInt(temp);
-            max = max>digit?max:digit;
-        }
-        //最小
-
-        for(int i = 0;i<10;i++){
-            String temp = numStr.replace(i+"",0+"");
-            int digit = Integer.parseInt(temp);
-            min = min<digit?min:digit;
+            //获取最大值
+            int digitMax = Integer.parseInt(s.replace((char)i,'9'));
+            max = max>digitMax?max:digitMax;
+            //获取最小值
+            int digitMin = Integer.parseInt(s.replace((char)i,'0'));
+            min = min<digitMin?min:digitMin;
         }
         return max-min;
     }
